@@ -11,4 +11,4 @@ function Sidebar() {
 export default Sidebar;
 
 const Container = styled.div`
-`
+`;
