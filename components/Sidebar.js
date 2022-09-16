@@ -1,9 +1,24 @@
+import { Avatar, IconButton } from "@material-ui/core";
 import styled from "styled-components";
+import ChatIcon from "@material-ui/icons/chat";
+import MoreVertIcon from "@material-ui/icons/morevert";
+
 
 function Sidebar() {
     return (
         <Container>
-            <h1>Sidebar</h1>
+            <Header>
+                <UserAvatar />
+
+                <IconsContainer>
+                    <IconButton>
+                        <ChatIcon />
+                    </IconButton>
+                    <IconButton>
+                        <MoreVertIcon />
+                    </IconButton>
+                </IconsContainer>
+            </Header>
         </Container>
     )
 }
@@ -12,3 +27,9 @@ export default Sidebar;
 
 const Container = styled.div`
 `;
+
+const Header = styled.div``;
+
+const UserAvatar = styled(Avatar)``;
+
+const IconsContainer = styled.div``;
