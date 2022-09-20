@@ -3,10 +3,12 @@ import styled from "styled-components";
 import ChatIcon from "@material-ui/icons/chat";
 import MoreVertIcon from "@material-ui/icons/morevert";
 import SearchIcon from "@material-ui/icons/search";
+import * as EmailValidator from "email-validator";
+import input from "@material-ui/icons/input";
 
 function Sidebar() {
     const createChat = () => {
-        const input = prompt("Please enter your email address for the chat")
+        const _input = prompt("Please enter your email address");
     };
 
     if (!input) return null;
