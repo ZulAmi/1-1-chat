@@ -1,22 +1,33 @@
 import { Avatar, Button, IconButton } from "@material-ui/core";
+import React from "react";
 import styled from "styled-components";
 import ChatIcon from "@material-ui/icons/chat";
 import MoreVertIcon from "@material-ui/icons/morevert";
 import SearchIcon from "@material-ui/icons/search";
 import * as EmailValidator from "email-validator";
-import input from "@material-ui/icons/input";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
+    const [user] = useAuthState(auth);
+
     const createChat = () => {
-        const input = prompt("Please enter your email address");
+        const input = prompt(
+            "Please enter an email address for the user you wish to chat with"
+        );
+
+        if (!input) return;
+
+        if (
+            EmailValidator.validate(input)
+        ) {
+            db.collection("chats").add({
+                users: [user.email, input],
+            });
+        }
     };
 
-    if (!input) return null;
 
-    if (EmailValidator.validate(input)) {
-        // need to add validator
-    }
 
     return (
         <Container>
@@ -45,7 +56,9 @@ function Sidebar() {
             {/* {List of chats} */}
         </Container>
     )
-}
+};
+
+
 
 export default Sidebar;
 
