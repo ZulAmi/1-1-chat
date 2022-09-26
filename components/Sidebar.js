@@ -32,7 +32,7 @@ function Sidebar() {
     };
 
     const chatAlreadyExist = (recipientEmail) => {
-        chatsSnapshot?.docs.find(
+        !!chatsSnapshot?.docs.find(
             chat =>
                 chat.data().users.find(user => user == recipientEmail)?.length > 0
         );
