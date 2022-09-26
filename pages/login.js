@@ -23,7 +23,7 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;
 
 const Container = styled.div`
 display: grid;
