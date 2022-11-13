@@ -4,17 +4,17 @@ import Sidebar from "../../components/Sidebar";
 import ChatScreen from "../../components/ChatScreen";
 
 function Chat() {
-    return
-    <Container>
-        <Head>
-            <title>Chat</title>
-        </Head>
-        <Sidebar />
-        <Chatcontainer>
-            <ChatScreen>
-        </Chatcontainer>
-    </Container>;
-
+    return (
+        <Container>
+            <Head>
+                <title>Chat</title>
+            </Head>
+            <Sidebar />
+            <Chatcontainer>
+                <ChatScreen />
+            </Chatcontainer>
+        </Container>
+    );
 }
 
 export default Chat;
