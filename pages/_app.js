@@ -24,6 +24,10 @@ function MyApp({ Component, pageProps }) {
   }, [user])
 
 
+  // if (loading) return <Loading />;
+
+  // if (!user) return <Login />;
+
   if (loading) return <Loading />;
 
   if (!user) return <Login />;
